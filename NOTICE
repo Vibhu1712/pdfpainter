@@ -1,0 +1,7 @@
+pdfpainter
+Copyright 2026 Vaibhav Rawat (AdRaw App Studio)
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It paints PDF pages to images with Pillow alone.
+
+Originally developed as part of docextract by AdRaw App Studio.

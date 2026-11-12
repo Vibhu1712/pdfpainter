@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdfpainter"
+version = "0.1.0"
+description = "Paint PDF pages to images with Pillow alone: no native PDF engine, permissive licence, exact text positions. For OCR and page previews where PDF DLLs can't run."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Vaibhav Rawat (AdRaw App Studio)" }]
+keywords = ["pdf", "render", "rasterize", "pdf to image", "pillow", "ocr", "pure python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Office/Business",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pdfsieve>=0.1.0",
+    "pdfminer.six>=20240706",
+    "Pillow>=9.1",
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "reportlab>=4; python_version >= '3.10'", "reportlab>=4,<=4.5.0; python_version < '3.10'"]
+
+[project.scripts]
+pdfpainter = "pdfpainter.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Vibhu1712/pdfpainter"
+Issues = "https://github.com/Vibhu1712/pdfpainter/issues"
+Changelog = "https://github.com/Vibhu1712/pdfpainter/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pdfpainter = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
